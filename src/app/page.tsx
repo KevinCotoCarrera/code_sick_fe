@@ -775,22 +775,13 @@ export default function Home() {
                 </div>
               </FadeIn>
 
-              <div
-                className="overflow-hidden rounded-3xl border p-8 backdrop-blur"
-                style={{
-                  borderColor: `${theme.colors.border}66`,
-                  background: `${theme.colors.background}f2`,
-                  boxShadow: theme.effects.shadowHover,
-                }}
-              >
-                <LeadCaptureForm
-                  title={t("leadForm.form.title")}
-                  description={t("leadForm.form.description")}
-                  showCompany={true}
-                  showPhone={true}
-                  showMessage={true}
-                />
-              </div>
+              <LeadCaptureForm
+                title={t("leadForm.form.title")}
+                description={t("leadForm.form.description")}
+                showCompany={true}
+                showPhone={true}
+                showMessage={true}
+              />
             </div>
           </Section>
 
