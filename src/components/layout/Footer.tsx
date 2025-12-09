@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useTheme } from "@lib/theme/ThemeProvider";
 
 export default function Footer() {
+  const t = useTranslations("footer");
   const theme = useTheme();
+  const year = new Date().getFullYear();
 
   return (
     <footer
@@ -20,9 +23,9 @@ export default function Footer() {
           className="flex items-center gap-2 font-semibold"
           style={{ color: theme.colors.text }}
         >
-          <span>CodeSick</span>
+          <span>{t("brandName")}</span>
           <span style={{ color: theme.colors.textMuted }}>•</span>
-          <span>AI-powered business solutions</span>
+          <span>{t("tagline")}</span>
         </div>
         <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
           <a
@@ -36,7 +39,7 @@ export default function Footer() {
               (e.currentTarget.style.color = theme.colors.textMuted)
             }
           >
-            Phone: +66 63 645 5571
+            {t("contact.phoneLabel")}: {t("contact.phoneNumber")}
           </a>
           <span
             className="hidden sm:inline"
@@ -55,7 +58,7 @@ export default function Footer() {
               (e.currentTarget.style.color = theme.colors.textMuted)
             }
           >
-            Email: contact@codesick.com
+            {t("contact.emailLabel")}: {t("contact.emailAddress")}
           </a>
         </div>
       </div>
@@ -64,9 +67,7 @@ export default function Footer() {
           className="mx-auto max-w-7xl px-4 sm:px-8 py-4 text-xs flex items-center justify-between"
           style={{ color: theme.colors.textMuted }}
         >
-          <span>
-            © {new Date().getFullYear()} CodeSick. All rights reserved.
-          </span>
+          <span>{t("copyright", { year })}</span>
           <div className="flex items-center gap-4">
             <Link
               href="#features"
@@ -79,7 +80,7 @@ export default function Footer() {
                 (e.currentTarget.style.color = theme.colors.textMuted)
               }
             >
-              Features
+              {t("links.features")}
             </Link>
             <Link
               href="#pricing"
@@ -92,7 +93,7 @@ export default function Footer() {
                 (e.currentTarget.style.color = theme.colors.textMuted)
               }
             >
-              Pricing
+              {t("links.pricing")}
             </Link>
             <Link
               href="#whyus"
@@ -105,7 +106,7 @@ export default function Footer() {
                 (e.currentTarget.style.color = theme.colors.textMuted)
               }
             >
-              Why Us
+              {t("links.whyUs")}
             </Link>
           </div>
         </div>

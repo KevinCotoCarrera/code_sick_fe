@@ -43,7 +43,7 @@ export default function LandingPage() {
         <FeatureGrid
           features={[
             {
-              icon: "🚀",
+              icon: "",
               title: "Fast",
               description: "Lightning-fast performance",
             },

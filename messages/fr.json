@@ -1,7 +1,7 @@
 {
   "landing": {
     "hero": {
-      "badge": "🚀 Transformez Vos Ventes",
+      "badge": " Transformez Vos Ventes",
       "title": "Obtenez des Résultats avec des Insights Alimentés par l'IA",
       "description": "Exploitez une technologie de pointe pour capturer des leads, analyser les retours et accélérer la croissance de votre entreprise avec des insights actionnables.",
       "cta": {
@@ -102,6 +102,22 @@
     "whyus": "Pourquoi Nous?",
     "login": "Se Connecter",
     "lockDiscount": "Verrouiller la Remise"
+  },
+  "footer": {
+    "brandName": "CodeSick",
+    "tagline": "Solutions d'entreprise alimentées par l'IA",
+    "contact": {
+      "phoneLabel": "Téléphone",
+      "phoneNumber": "+66 63 645 5571",
+      "emailLabel": "E-mail",
+      "emailAddress": "contact@codesick.com"
+    },
+    "links": {
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "whyUs": "Pourquoi Nous?"
+    },
+    "copyright": "© {year} CodeSick. Tous droits réservés."
   },
   "LocaleSwitcher": {
     "label": "Sélectionner la Langue",

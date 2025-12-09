@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useMemo } from "react";
 import dynamic from "next/dynamic";
 import NavBar from "@components/layout/NavBar";
 import Section from "@components/layout/Section";
 import { Card } from "@components/ui/Card";
 import Button from "@components/ui/Button";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import SEOScripts from "@components/seo/SEOScripts";
 import Footer from "@components/layout/Footer";
 import LeadCaptureForm from "@components/lead/LeadCaptureForm";
@@ -18,7 +18,14 @@ import {
 import { FloatingCard } from "@components/motion/InteractiveElements";
 import { motion } from "framer-motion";
 import { useTheme } from "@lib/theme/ThemeProvider";
-import { BarChart3, CheckIcon, Plug2, Radar, Sparkles } from "lucide-react";
+import {
+  BarChart3,
+  CheckIcon,
+  Plug2,
+  Radar,
+  Rocket,
+  Sparkles,
+} from "lucide-react";
 
 // Dynamic imports for 3D components (client-side only)
 const Hero3D = dynamic(() => import("@components/three/Hero3D"), {
@@ -42,10 +49,49 @@ const Product3D = dynamic(() => import("@components/three/Product3D"), {
   ),
 });
 
+const ModelCanvas = dynamic(
+  () => import("@components/three/models/ModelCanvas"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full animate-pulse rounded-xl opacity-50" />
+    ),
+  }
+);
+
 export default function Home() {
   const t = useTranslations("landing");
+  const locale = useLocale();
   const theme = useTheme();
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const localeUI = useMemo(() => {
+    const compactBase = {
+      heroHeading: "clamp(2.55rem, 4vw, 4.35rem)",
+      heroSub: "clamp(1.05rem, 1.6vw, 1.25rem)",
+      statValue: "clamp(2.6rem, 3vw, 3.15rem)",
+      container: "74rem",
+      pillPadding: "10px 14px",
+      pillGap: 10,
+    } as const;
+
+    const wideCopyLocales = ["en", "es", "fr", "it", "pt", "th", "zh"];
+
+    const isWide = wideCopyLocales.includes(locale);
+
+    return {
+      ...compactBase,
+      heroHeading: isWide
+        ? "clamp(2.35rem, 3.6vw, 3.85rem)"
+        : compactBase.heroHeading,
+      heroSub: isWide ? "clamp(0.98rem, 1.5vw, 1.18rem)" : compactBase.heroSub,
+      container: isWide ? "78rem" : compactBase.container,
+      featureCardPadding: isWide ? "sm" : "md",
+      featureTitleSize: isWide ? "1.45rem" : "1.55rem",
+      featureDescSize: isWide ? "0.97rem" : "1rem",
+      featureGap: isWide ? "1.1rem" : "1.35rem",
+    } as const;
+  }, [locale]);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -70,6 +116,33 @@ export default function Home() {
     {
       value: t("stats.insights.value"),
       label: t("stats.insights.label"),
+    },
+  ];
+
+  const scenePresets = [
+    {
+      title: "Forest Grove",
+      subtitle: "Calm evergreen backdrop for product or analytics tiles.",
+      preset: "forest-grove" as const,
+      accent: "#22c55e",
+    },
+    {
+      title: "River Camp",
+      subtitle: "Outdoor story with bridge, campfire, and tent silhouettes.",
+      preset: "river-camp" as const,
+      accent: "#0ea5e9",
+    },
+    {
+      title: "Zen Courtyard",
+      subtitle: "Minimal stones and palm for tranquil UI overlays.",
+      preset: "zen-courtyard" as const,
+      accent: "#a855f7",
+    },
+    {
+      title: "City Plaza",
+      subtitle: "Low-poly skyline for tech, SaaS, or analytics heroes.",
+      preset: "city-plaza" as const,
+      accent: "#0ea5e9",
     },
   ];
 
@@ -102,7 +175,10 @@ export default function Home() {
 
               <div
                 className="relative z-10 w-full px-4 sm:px-8 py-20"
-                style={{ maxWidth: theme.spacing.container, margin: "0 auto" }}
+                style={{
+                  maxWidth: localeUI.container || theme.spacing.container,
+                  margin: "0 auto",
+                }}
               >
                 <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                   <div className="space-y-10">
@@ -110,30 +186,44 @@ export default function Home() {
                       <motion.div
                         animate={
                           theme.effects.animations !== "none"
-                            ? { rotate: [0, 4, -4, 0] }
+                            ? { y: [0, -3, 0] }
                             : {}
                         }
                         transition={{
-                          duration: 2,
+                          duration: 2.2,
                           repeat: Infinity,
                           ease: "easeInOut",
                         }}
                         className="inline-block"
                       >
-                        <span
-                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
+                        <div
+                          className="inline-flex items-center gap-3 rounded-xl px-4 py-2 text-sm font-semibold"
                           style={{
-                            background: `${theme.colors.primary}1a`,
-                            color: theme.colors.primary,
-                            borderRadius: theme.effects.borderRadius,
+                            color: theme.colors.text,
+                            background: `${theme.colors.background}e6`,
+                            border: `1px solid ${theme.colors.border}`,
+                            boxShadow: `0 12px 40px ${theme.colors.accent}22`,
+                            backdropFilter: "blur(12px)",
+                            padding: localeUI.pillPadding,
+                            gap: localeUI.pillGap,
                           }}
                         >
                           <span
-                            className="h-2 w-2 rounded-full"
-                            style={{ background: theme.colors.primary }}
-                          />
-                          {t("hero.badge")}
-                        </span>
+                            className="inline-flex h-8 w-8 items-center justify-center rounded-lg"
+                            style={{
+                              background: `${theme.colors.primary}15`,
+                              border: `1px solid ${theme.colors.primary}30`,
+                            }}
+                          >
+                            <Rocket
+                              className="h-4 w-4"
+                              color={theme.colors.primary}
+                            />
+                          </span>
+                          <span style={{ color: theme.colors.text }}>
+                            {t("hero.badge")}
+                          </span>
+                        </div>
                       </motion.div>
                     </FadeIn>
 
@@ -143,6 +233,8 @@ export default function Home() {
                         style={{
                           fontWeight: theme.typography.headingWeight,
                           color: theme.sections.hero.textColor,
+                          fontSize: localeUI.heroHeading,
+                          lineHeight: 1.12,
                         }}
                       >
                         {t("hero.title")}
@@ -152,7 +244,11 @@ export default function Home() {
                     <SlideIn direction="left" delay={animationSpeed * 2}>
                       <p
                         className="text-xl leading-relaxed max-w-2xl"
-                        style={{ color: theme.colors.textMuted }}
+                        style={{
+                          color: theme.colors.textMuted,
+                          fontSize: localeUI.heroSub,
+                          lineHeight: 1.6,
+                        }}
                       >
                         {t("hero.description")}
                       </p>
@@ -188,6 +284,8 @@ export default function Home() {
                             background: `${theme.colors.background}cc`,
                             borderRadius: theme.effects.borderRadius,
                             border: `1px solid ${theme.colors.border}`,
+                            padding: localeUI.pillPadding,
+                            gap: localeUI.pillGap,
                           }}
                         >
                           <span
@@ -378,9 +476,13 @@ export default function Home() {
                         variant="feature"
                         hoverable
                         className="h-full relative overflow-hidden"
+                        padding={localeUI.featureCardPadding as "sm" | "md"}
                       >
                         <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/4 to-transparent pointer-events-none" />
-                        <div className="space-y-4 relative">
+                        <div
+                          className="relative"
+                          style={{ gap: localeUI.featureGap, display: "grid" }}
+                        >
                           <div className="flex items-center gap-3">
                             <div
                               className="h-11 w-11 rounded-2xl flex items-center justify-center"
@@ -426,13 +528,18 @@ export default function Home() {
                             style={{
                               fontWeight: theme.typography.headingWeight,
                               color: theme.colors.text,
+                              fontSize: localeUI.featureTitleSize,
                             }}
                           >
                             {feature.title}
                           </h3>
                           <p
                             className="text-sm"
-                            style={{ color: theme.colors.textMuted }}
+                            style={{
+                              color: theme.colors.textMuted,
+                              fontSize: localeUI.featureDescSize,
+                              lineHeight: 1.5,
+                            }}
                           >
                             {feature.description}
                           </p>
@@ -549,7 +656,13 @@ export default function Home() {
                     <Suspense
                       fallback={<div className="w-full h-full animate-pulse" />}
                     >
-                      <Feature3D variant="cube" />
+                      <ModelCanvas
+                        scenePreset="abstract-orb"
+                        autoRotate
+                        cameraPosition={[3.4, 2.6, 4.2]}
+                        background={theme.colors.background}
+                        lightingPreset="soft-dark"
+                      />
                     </Suspense>
                     <div
                       className="absolute top-6 right-6 rounded-2xl border px-4 py-3 text-sm"
@@ -576,6 +689,109 @@ export default function Home() {
               </div>
             </div>
           </Section>
+
+          {/* Bundled Nature Scenes */}
+          {/* <Section variant="default" id="scenes">
+            <div
+              className="px-4 sm:px-8"
+              style={{ maxWidth: theme.spacing.container, margin: "0 auto" }}
+            >
+              <div className="flex flex-col gap-3 mb-8">
+                <div
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm"
+                  style={{
+                    background: `${theme.colors.primary}15`,
+                    color: theme.colors.primary,
+                    borderRadius: theme.effects.borderRadius,
+                    border: `1px solid ${theme.colors.primary}30`,
+                  }}
+                >
+                  <Sparkles className="h-4 w-4" color={theme.colors.primary} />
+                  Immersive 3D presets
+                </div>
+                <div className="space-y-2">
+                  <h2
+                    className="text-4xl md:text-5xl"
+                    style={{
+                      fontWeight: theme.typography.headingWeight,
+                      color: theme.colors.text,
+                    }}
+                  >
+                    Nature models, ready to drop in
+                  </h2>
+                  <p
+                    className="text-lg max-w-3xl"
+                    style={{ color: theme.colors.textMuted }}
+                  >
+                    These bundled scenes from the new nature library load
+                    instantly and fit dashboards, hero visuals, or product
+                    spotlights without extra downloads.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {scenePresets.map((scene) => (
+                  <Card
+                    key={scene.preset}
+                    hoverable
+                    className="relative overflow-hidden"
+                    padding="none"
+                  >
+                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/8 to-transparent pointer-events-none" />
+                    <div
+                      className="h-[280px] border-b"
+                      style={{ borderColor: theme.colors.border }}
+                    >
+                      <Suspense
+                        fallback={
+                          <div className="w-full h-full animate-pulse" />
+                        }
+                      >
+                        <ModelCanvas
+                          scenePreset={scene.preset}
+                          autoRotate
+                          cameraPosition={[3.2, 2.6, 4]}
+                          background={theme.colors.background}
+                          lightingPreset="soft-dark"
+                        />
+                      </Suspense>
+                    </div>
+                    <div
+                      className="p-4 space-y-2"
+                      style={{ background: `${theme.colors.background}f6` }}
+                    >
+                      <div className="flex items-center justify-between">
+                        <h3
+                          className="text-lg font-semibold"
+                          style={{ color: theme.colors.text }}
+                        >
+                          {scene.title}
+                        </h3>
+                        <span
+                          className="text-xs font-semibold px-3 py-1 rounded-full"
+                          style={{
+                            background: `${scene.accent}15`,
+                            color: scene.accent,
+                            borderRadius: theme.effects.borderRadius,
+                            border: `1px solid ${scene.accent}30`,
+                          }}
+                        >
+                          Bundled
+                        </span>
+                      </div>
+                      <p
+                        className="text-sm"
+                        style={{ color: theme.colors.textMuted }}
+                      >
+                        {scene.subtitle}
+                      </p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </Section> */}
 
           {/* Stats Section */}
           <Section variant="stats">
@@ -622,6 +838,7 @@ export default function Home() {
                         style={{
                           fontWeight: theme.typography.headingWeight,
                           color: theme.colors.accent,
+                          fontSize: localeUI.statValue,
                         }}
                       >
                         {stat.value}

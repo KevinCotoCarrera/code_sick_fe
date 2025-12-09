@@ -1,7 +1,7 @@
 {
   "landing": {
     "hero": {
-      "badge": "🚀 売上を変革する",
+      "badge": " 売上を変革する",
       "title": "AI駆動のインサイトで結果を推進",
       "description": "最先端技術を活用してリードを獲得し、フィードバックを分析し、実用的なインサイトでビジネスの成長を加速させます。",
       "cta": {
@@ -102,6 +102,22 @@
     "whyus": "なぜ私たち？",
     "login": "ログイン",
     "lockDiscount": "割引をロック"
+  },
+  "footer": {
+    "brandName": "CodeSick",
+    "tagline": "AIを活用したビジネスソリューション",
+    "contact": {
+      "phoneLabel": "電話",
+      "phoneNumber": "+66 63 645 5571",
+      "emailLabel": "メール",
+      "emailAddress": "contact@codesick.com"
+    },
+    "links": {
+      "features": "機能",
+      "pricing": "料金",
+      "whyUs": "なぜ私たち？"
+    },
+    "copyright": "© {year} CodeSick. 無断転載を禁じます。"
   },
   "LocaleSwitcher": {
     "label": "言語を選択",

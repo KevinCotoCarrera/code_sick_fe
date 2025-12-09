@@ -1,7 +1,7 @@
 {
   "landing": {
     "hero": {
-      "badge": "🚀 转变您的销售",
+      "badge": " 转变您的销售",
       "title": "通过AI驱动的洞察推动业绩",
       "description": "利用尖端技术捕获潜在客户，分析反馈，并通过可操作的洞察加速业务增长。",
       "cta": {
@@ -102,6 +102,22 @@
     "whyus": "为什么选择我们？",
     "login": "登录",
     "lockDiscount": "锁定折扣"
+  },
+  "footer": {
+    "brandName": "CodeSick",
+    "tagline": "AI驱动的商业解决方案",
+    "contact": {
+      "phoneLabel": "电话",
+      "phoneNumber": "+66 63 645 5571",
+      "emailLabel": "邮箱",
+      "emailAddress": "contact@codesick.com"
+    },
+    "links": {
+      "features": "功能",
+      "pricing": "定价",
+      "whyUs": "为什么选择我们？"
+    },
+    "copyright": "© {year} CodeSick。保留所有权利。"
   },
   "LocaleSwitcher": {
     "label": "选择语言",

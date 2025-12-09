@@ -1,7 +1,7 @@
 {
   "landing": {
     "hero": {
-      "badge": "🚀 Transform Your Sales",
+      "badge": " Transform Your Sales",
       "title": "Drive Results with AI-Powered Insights",
       "description": "Leverage cutting-edge technology to capture leads, analyze feedback, and accelerate your business growth with actionable insights.",
       "cta": {
@@ -102,6 +102,22 @@
     "whyus": "Why Us?",
     "login": "Log in",
     "lockDiscount": "Lock Discount"
+  },
+  "footer": {
+    "brandName": "CodeSick",
+    "tagline": "AI-powered business solutions",
+    "contact": {
+      "phoneLabel": "Phone",
+      "phoneNumber": "+66 63 645 5571",
+      "emailLabel": "Email",
+      "emailAddress": "contact@codesick.com"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "whyUs": "Why Us?"
+    },
+    "copyright": "© {year} CodeSick. All rights reserved."
   },
   "LocaleSwitcher": {
     "label": "Select Language",

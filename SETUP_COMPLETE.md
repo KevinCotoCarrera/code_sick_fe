@@ -18,7 +18,7 @@ Your repository has been successfully transformed into a modern, sales-driven la
 - ❌ Auth hooks and API
 - ❌ Analytics hooks (unused)
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Development
