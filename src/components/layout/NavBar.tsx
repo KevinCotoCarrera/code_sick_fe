@@ -6,11 +6,16 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import LocaleSwitcher from "@components/shared/LocaleSwitcher";
 import { useScreenSize } from "@lib/hooks/useScreenSize";
+import { useTheme } from "@lib/theme/ThemeProvider";
+
 type NavItem = { href: string; label: string };
 
 export interface HeaderProps {
   nav?: NavItem[];
   showLogin?: boolean;
+  showCTA?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
 // Labels are keys for i18n under the "nav" namespace (fallbacks handled below)
@@ -22,11 +27,14 @@ const defaultNav: NavItem[] = [
 
 export default function NavBar({
   nav = defaultNav,
-}: // showLogin = true,
-HeaderProps) {
+  showCTA = true,
+  ctaText,
+  ctaHref = "#join-waitlist",
+}: HeaderProps) {
   const [open, setOpen] = useState(false);
   const screen = useScreenSize();
   const t = useTranslations("nav");
+  const theme = useTheme();
 
   // Translate known nav keys, otherwise fall back to the provided label
   const KNOWN_NAV_KEYS = new Set([
@@ -44,21 +52,42 @@ HeaderProps) {
     return label;
   };
 
+  const headerClasses = [
+    theme.navbar.sticky ? "sticky top-0" : "",
+    "z-40 w-full border-b",
+    theme.navbar.blur ? "backdrop-blur" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-gray-100 bg-white/75 backdrop-blur">
+    <header
+      className={headerClasses}
+      style={{
+        backgroundColor: theme.navbar.background,
+        borderColor: theme.navbar.borderColor,
+      }}
+    >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Left: Logo + Nav */}
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-2xl font-semibold text-amber-600">
-            KraowKao
+          <Link
+            href="/"
+            className="text-2xl font-semibold"
+            style={{ color: theme.navbar.logoColor }}
+          >
+            {theme.brand.name}
           </Link>
 
-          <nav className="hidden md:flex items-center gap-1 text-sm text-gray-600">
+          <nav
+            className="hidden md:flex items-center gap-1 text-sm"
+            style={{ color: theme.navbar.textColor }}
+          >
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-2 transition-colors"
+                className="rounded-md px-3 py-2 transition-colors hover:opacity-80"
               >
                 {getLabel(item.label)}
               </Link>
@@ -66,35 +95,24 @@ HeaderProps) {
           </nav>
         </div>
 
-        {/* Right: Login */}
+        {/* Right: Locale Switcher + CTA */}
         <div className="flex items-center gap-3">
           <div className="hidden md:block">
             <LocaleSwitcher />
           </div>
 
-          {/* LOGIN BUTTON COMMENTED OUT */}
-          {/*
-          {showLogin && (
-            <Link href="/login">
-              <Button size="md" variant="primary">
-                {t("login")}
+          {showCTA && (
+            <Link href={ctaHref}>
+              <Button size={screen === "xs" ? "sm" : "md"} variant="primary">
+                {ctaText || t("lockDiscount")}
               </Button>
             </Link>
           )}
-          */}
-
-          {/* Lock Discount Button (visible instead of login) */}
-          {/* Lock Discount Button (responsive size) */}
-
-          <Link href="#join-waitlist">
-            <Button size={screen === "xs" ? "sm" : "md"} variant="primary">
-              {t("lockDiscount")}
-            </Button>
-          </Link>
 
           {/* Mobile menu button */}
           <button
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 md:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100 md:hidden"
+            style={{ color: theme.navbar.textColor }}
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
           >
@@ -118,14 +136,23 @@ HeaderProps) {
 
       {/* Mobile Nav */}
       {open && (
-        <div className="border-t border-gray-100 bg-white md:hidden">
+        <div
+          className="border-t md:hidden"
+          style={{
+            backgroundColor: theme.navbar.background,
+            borderColor: theme.navbar.borderColor,
+          }}
+        >
           <div className="px-4 py-3 sm:px-6">
-            <nav className="flex flex-col gap-1 text-sm text-gray-700">
+            <nav
+              className="flex flex-col gap-1 text-sm"
+              style={{ color: theme.navbar.textColor }}
+            >
               {nav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-md px-3 py-2"
+                  className="rounded-md px-3 py-2 hover:opacity-80"
                   onClick={() => setOpen(false)}
                 >
                   {getLabel(item.label)}

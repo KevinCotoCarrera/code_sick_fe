@@ -1,6 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
+import { useTheme } from "@lib/theme/ThemeProvider";
 
 export type ButtonVariant =
   | "primary"
@@ -28,13 +29,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       isLoading = false,
       disabled = false,
       fullWidth = false,
+      style = {},
       ...props
     },
     ref
   ) => {
+    const theme = useTheme();
+
     // Base styles for all buttons
     const baseStyles =
-      "inline-flex items-center justify-center font-medium rounded transition-colors focus:outline-none focus:ring-2 focus:ring-amber-100";
+      "inline-flex items-center justify-center font-medium rounded transition-colors focus:outline-none focus:ring-2 focus:ring-opacity-50";
 
     // Size styles
     const sizeStyles = {
@@ -43,16 +47,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       lg: "text-base px-6 py-3",
     };
 
-    // Variant styles
-    const variantStyles = {
-      primary: `bg-amber-600 text-white hover:bg-amber-700 active:bg-amber-800 focus:ring-amber-300 shadow-sm`,
-      secondary:
-        "bg-gray-100 text-gray-900 hover:bg-gray-200 active:bg-gray-300 focus:ring-gray-300",
-      outline:
-        "bg-transparent text-gray-700 border border-gray-300 hover:bg-gray-50 active:bg-gray-100 focus:ring-gray-200",
-      link: "bg-transparent text-amber-600 hover:text-amber-800 hover:underline focus:ring-amber-100 shadow-none p-0",
-      danger:
-        "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 focus:ring-red-300 shadow-sm",
+    // Variant styles - base classes only, colors from theme
+    const variantClasses = {
+      primary: "shadow-sm focus:ring-2",
+      secondary: "focus:ring-2",
+      outline: "bg-transparent border focus:ring-2",
+      link: "bg-transparent hover:underline shadow-none p-0",
+      danger: "shadow-sm focus:ring-2 focus:ring-red-300",
     };
 
     // Width styles
@@ -64,13 +65,61 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ? "opacity-60 cursor-not-allowed"
         : "cursor-pointer";
 
-    const classes = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${widthStyles} ${stateStyles} ${className}`;
+    const classes = `${baseStyles} ${sizeStyles[size]} ${variantClasses[variant]} ${widthStyles} ${stateStyles} ${className}`;
+
+    // Dynamic styles based on theme
+    const dynamicStyles = (() => {
+      if (variant === "primary") {
+        return {
+          backgroundColor: theme.button.primaryBg,
+          color: theme.button.primaryText,
+          ...style,
+        };
+      }
+      if (variant === "secondary") {
+        return {
+          backgroundColor: theme.colors.secondary,
+          color: theme.colors.text,
+          ...style,
+        };
+      }
+      if (variant === "outline") {
+        return {
+          borderColor: theme.colors.border,
+          color: theme.colors.text,
+          ...style,
+        };
+      }
+      if (variant === "link") {
+        return {
+          color: theme.colors.primary,
+          ...style,
+        };
+      }
+      if (variant === "danger") {
+        return style;
+      }
+      return style;
+    })();
 
     return (
       <button
         ref={ref}
         disabled={disabled || isLoading}
         className={classes}
+        style={dynamicStyles}
+        onMouseEnter={(e) => {
+          if (variant === "primary" && !disabled && !isLoading) {
+            (e.target as HTMLButtonElement).style.backgroundColor =
+              theme.button.primaryHover;
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (variant === "primary" && !disabled && !isLoading) {
+            (e.target as HTMLButtonElement).style.backgroundColor =
+              theme.button.primaryBg;
+          }
+        }}
         {...props}
       >
         {isLoading && (

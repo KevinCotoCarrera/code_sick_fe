@@ -7,6 +7,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getUserLocale } from "@i18n/locale";
 import { generateMetadata as generateSEOMetadata } from "@lib/seo/metadata";
 import { Locale } from "@lib/services/i18n/config";
+import { ThemeProvider } from "@lib/theme/ThemeProvider";
+import { themes, ThemeName } from "@lib/theme/config";
 import enMessages from "../../messages/en.json";
 import thMessages from "../../messages/th.json";
 import esMessages from "../../messages/es.json";
@@ -69,14 +71,45 @@ export default async function RootLayout({
   const locale = await getUserLocale();
   const messages = messagesMap[locale] || enMessages;
 
+  // Theme selection based on environment variables
+  // Options: light, dark, neon, minimalist, modern
+  const themeName: ThemeName =
+    (process.env.NEXT_PUBLIC_THEME as ThemeName) || "light";
+  const theme = themes[themeName] || themes.light;
+
+  // Optional: Override brand name from environment
+  if (process.env.NEXT_PUBLIC_BRAND_NAME) {
+    theme.brand.name = process.env.NEXT_PUBLIC_BRAND_NAME;
+  }
+
+  // Optional: Override typography scale (sm, md, lg)
+  if (process.env.NEXT_PUBLIC_TYPOGRAPHY_SCALE) {
+    theme.typography.scale = process.env.NEXT_PUBLIC_TYPOGRAPHY_SCALE as
+      | "sm"
+      | "md"
+      | "lg";
+  }
+
+  // Optional: Override animations (none, subtle, moderate, playful)
+  if (process.env.NEXT_PUBLIC_ANIMATIONS) {
+    theme.effects.animations = process.env.NEXT_PUBLIC_ANIMATIONS as any;
+  }
+
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          backgroundColor: theme.colors.background,
+          color: theme.colors.text,
+          fontFamily: theme.typography.fontFamily,
+        }}
       >
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <ThemeProvider theme={theme}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

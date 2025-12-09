@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
+import { useTheme } from "@lib/theme/ThemeProvider";
 
 export interface CardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: "default" | "flat" | "outlined";
+  variant?: "default" | "feature";
   padding?: "none" | "sm" | "md" | "lg";
-  shadow?: "none" | "sm" | "md" | "lg";
-  rounded?: boolean;
+  hoverable?: boolean;
   header?: React.ReactNode;
   footer?: React.ReactNode;
 }
@@ -18,11 +18,12 @@ const Card: React.FC<CardProps> = ({
   className = "",
   variant = "default",
   padding = "md",
-  shadow = "md",
-  rounded = true,
+  hoverable = true,
   header,
   footer,
 }) => {
+  const theme = useTheme();
+
   const paddingClasses = {
     none: "",
     sm: "p-3",
@@ -30,31 +31,40 @@ const Card: React.FC<CardProps> = ({
     lg: "p-8",
   };
 
-  const shadowClasses = {
-    none: "",
-    sm: "shadow-sm",
-    md: "shadow",
-    lg: "shadow-lg",
+  const baseStyles =
+    variant === "feature"
+      ? { background: theme.sections.features.cardBackground }
+      : { background: theme.card.background };
+
+  const cardStyles = {
+    ...baseStyles,
+    border: theme.card.border,
+    borderColor: theme.card.borderColor,
+    borderRadius: theme.card.radius,
+    boxShadow: theme.card.shadow,
+    color: theme.colors.text,
   };
 
-  const variantClasses = {
-    default: "bg-white",
-    flat: "bg-gray-50",
-    outlined: "bg-white border border-gray-200",
-  };
-
-  const roundedClass = rounded ? "rounded-xl" : "";
-
-  const classes = `
-    ${variantClasses[variant]}
-    ${paddingClasses[padding]}
-    ${shadowClasses[shadow]}
-    ${roundedClass}
-    ${className}
-  `;
+  const hoverClass = hoverable ? "transition-all duration-300" : "";
 
   return (
-    <div className={classes}>
+    <div
+      className={`${paddingClasses[padding]} ${hoverClass} ${className}`}
+      style={cardStyles}
+      onMouseEnter={(e) => {
+        if (hoverable && theme.card.hoverShadow !== "none") {
+          (e.currentTarget as HTMLElement).style.boxShadow =
+            theme.card.hoverShadow;
+          (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (hoverable) {
+          (e.currentTarget as HTMLElement).style.boxShadow = theme.card.shadow;
+          (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+        }
+      }}
+    >
       {header && (
         <div
           className={`${
@@ -79,3 +89,4 @@ const Card: React.FC<CardProps> = ({
 };
 
 export default Card;
+export { Card };
