@@ -17,5 +17,6 @@ const nextConfig: NextConfig = {
   // Add other Next.js config options here as needed
 };
 
-const withNextIntl = createNextIntlPlugin();
+// Point to the i18n request configuration
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 export default withNextIntl(nextConfig);

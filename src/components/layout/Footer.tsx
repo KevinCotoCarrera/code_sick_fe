@@ -16,10 +16,7 @@ export default function Footer() {
             Phone: +66 63 645 5571
           </a>
           <span className="hidden sm:inline text-gray-300">|</span>
-          <a
-            className="hover:text-blue-600"
-            href="mailto:contact@codesick.com"
-          >
+          <a className="hover:text-blue-600" href="mailto:contact@codesick.com">
             Email: contact@codesick.com
           </a>
         </div>
@@ -27,18 +24,17 @@ export default function Footer() {
       <div className="border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 py-4 text-xs text-gray-500 flex items-center justify-between">
           <span>
-            © {new Date().getFullYear()} KraowKao.{" "}
-            {t("rights", { default: "All rights reserved." })}
+            © {new Date().getFullYear()} CodeSick. All rights reserved.
           </span>
           <div className="flex items-center gap-4">
             <Link href="#features" className="hover:text-gray-700">
-              {t("links.features", { default: "Features" })}
+              Features
             </Link>
             <Link href="#pricing" className="hover:text-gray-700">
-              {t("links.pricing", { default: "Pricing" })}
+              Pricing
             </Link>
             <Link href="#whyus" className="hover:text-gray-700">
-              {t("links.whyus", { default: "Why Us" })}
+              Why Us
             </Link>
           </div>
         </div>

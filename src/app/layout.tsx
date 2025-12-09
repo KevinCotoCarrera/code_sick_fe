@@ -6,8 +6,16 @@ import "./skeleton.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getUserLocale } from "@i18n/locale";
 import { generateMetadata as generateSEOMetadata } from "@lib/seo/metadata";
+import { Locale } from "@lib/services/i18n/config";
 import enMessages from "../../messages/en.json";
 import thMessages from "../../messages/th.json";
+import esMessages from "../../messages/es.json";
+import frMessages from "../../messages/fr.json";
+import jaMessages from "../../messages/ja.json";
+import koMessages from "../../messages/ko.json";
+import ptMessages from "../../messages/pt.json";
+import itMessages from "../../messages/it.json";
+import zhMessages from "../../messages/zh.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,13 +48,26 @@ export const metadata: Metadata = generateSEOMetadata({
   canonical: "https://your-domain.com",
 });
 
+// Map locales to their message files
+const messagesMap: Record<Locale, any> = {
+  en: enMessages,
+  th: thMessages,
+  es: esMessages,
+  fr: frMessages,
+  ja: jaMessages,
+  ko: koMessages,
+  pt: ptMessages,
+  it: itMessages,
+  zh: zhMessages,
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const locale = await getUserLocale();
-  const messages = locale === "th" ? thMessages : enMessages;
+  const messages = messagesMap[locale] || enMessages;
 
   return (
     <html lang={locale}>
