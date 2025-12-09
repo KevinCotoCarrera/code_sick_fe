@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "hero": {
+      "badge": "🚀 売上を変革する",
+      "title": "AI駆動のインサイトで結果を推進",
+      "description": "最先端技術を活用してリードを獲得し、フィードバックを分析し、実用的なインサイトでビジネスの成長を加速させます。",
+      "cta": {
+        "primary": "無料で始める",
+        "secondary": "詳細を見る"
+      }
+    },
+    "features": {
+      "title": "強力な機能",
+      "subtitle": "売上を促進し、顧客を引き付けるために必要なすべて",
+      "items": {
+        "analytics": {
+          "icon": "🤖",
+          "title": "AI駆動の分析",
+          "description": "高度な感情分析により、顧客フィードバックから深いインサイトを取得"
+        },
+        "tracking": {
+          "icon": "📊",
+          "title": "リアルタイム追跡",
+          "description": "パフォーマンス指標と顧客エンゲージメントをリアルタイムで監視"
+        },
+        "integration": {
+          "icon": "⚡",
+          "title": "シームレスな統合",
+          "description": "QRコードで簡単にセットアップし、すべての場所で即座に展開"
+        }
+      }
+    },
+    "showcase": {
+      "title": "未来を体験",
+      "description": "最先端の3Dビジュアライゼーションとインタラクションし、データに命を吹き込む方法を見る",
+      "items": {
+        "dashboards": "インタラクティブダッシュボード",
+        "visualization": "3Dデータビジュアライゼーション",
+        "analytics": "没入型分析"
+      }
+    },
+    "stats": {
+      "users": {
+        "value": "10K+",
+        "label": "アクティブユーザー"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "満足度"
+      },
+      "insights": {
+        "value": "50M+",
+        "label": "生成されたインサイト"
+      }
+    },
+    "product": {
+      "title": "スケール向けに構築",
+      "description": "スタートアップから大企業まで、当社のプラットフォームはビジネスとともに成長します",
+      "features": {
+        "security": "エンタープライズグレードのセキュリティ",
+        "uptime": "99.9%の稼働時間保証",
+        "support": "24時間365日のカスタマーサポート",
+        "integrations": "カスタム統合"
+      }
+    },
+    "leadForm": {
+      "title": "始める準備はできましたか？",
+      "subtitle": "すでに当社のプラットフォームを使用している数千の企業に参加",
+      "form": {
+        "title": "無料トライアルを開始",
+        "description": "クレジットカード不要。数分で開始。",
+        "fields": {
+          "name": "名前",
+          "email": "メールアドレス",
+          "company": "会社名",
+          "phone": "電話番号",
+          "message": "メッセージ"
+        },
+        "placeholders": {
+          "name": "山田太郎",
+          "email": "yamada@company.com",
+          "company": "御社名",
+          "phone": "+81 (555) 000-0000",
+          "message": "ニーズについて教えてください..."
+        },
+        "submit": "ウェイトリストに参加",
+        "submitting": "送信中...",
+        "success": "ありがとうございます！すぐにご連絡いたします。",
+        "error": "問題が発生しました。もう一度お試しください。"
+      }
+    },
+    "cta": {
+      "title": "今日からビジネスを変革",
+      "subtitle": "データ駆動型ビジネスの次世代に参加",
+      "button": "今すぐ始める →"
+    }
+  },
+  "nav": {
+    "features": "機能",
+    "pricing": "料金",
+    "about": "について",
+    "whyus": "なぜ私たち？",
+    "login": "ログイン",
+    "lockDiscount": "割引をロック"
+  },
+  "LocaleSwitcher": {
+    "label": "言語を選択",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ja": "日本語",
+    "ko": "한국어",
+    "th": "ไทย",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}

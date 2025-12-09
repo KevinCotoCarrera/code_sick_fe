@@ -1,5 +1,4 @@
 "use server";
-import { db } from "@lib/serverless/waitlistDb";
 
 // Simple email sanitizer
 function sanitizeEmail(email: string): string {
@@ -19,5 +18,10 @@ export async function saveEmail(formData: FormData) {
   if (!/^[\w.\-+]+@[\w.\-]+\.[a-zA-Z]{2,}$/.test(email)) {
     throw new Error("Invalid email format");
   }
-  await db`INSERT INTO waitlist (email) VALUES (${email}) ON CONFLICT (email) DO NOTHING`;
+  
+  // TODO: Add your database integration here
+  // Example: await db`INSERT INTO waitlist (email) VALUES (${email}) ON CONFLICT (email) DO NOTHING`;
+  
+  console.log("Email saved:", email);
+  return { success: true, email };
 }

@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "hero": {
+      "badge": "🚀 Trasforma le Tue Vendite",
+      "title": "Ottieni Risultati con Insights Alimentati dall'IA",
+      "description": "Sfrutta la tecnologia all'avanguardia per acquisire lead, analizzare feedback e accelerare la crescita del tuo business con insights azionabili.",
+      "cta": {
+        "primary": "Inizia Gratuitamente",
+        "secondary": "Scopri di Più"
+      }
+    },
+    "features": {
+      "title": "Funzionalità Potenti",
+      "subtitle": "Tutto ciò di cui hai bisogno per incrementare le vendite e coinvolgere i clienti",
+      "items": {
+        "analytics": {
+          "icon": "🤖",
+          "title": "Analisi Alimentata dall'IA",
+          "description": "Ottieni insights approfonditi dal feedback dei clienti con analisi del sentiment avanzata"
+        },
+        "tracking": {
+          "icon": "📊",
+          "title": "Tracciamento in Tempo Reale",
+          "description": "Monitora le tue metriche di performance e il coinvolgimento dei clienti in tempo reale"
+        },
+        "integration": {
+          "icon": "⚡",
+          "title": "Integrazione Senza Soluzione di Continuità",
+          "description": "Configurazione facile con codici QR e distribuzione istantanea in tutte le sedi"
+        }
+      }
+    },
+    "showcase": {
+      "title": "Sperimenta il Futuro",
+      "description": "Interagisci con le nostre visualizzazioni 3D all'avanguardia e scopri come diamo vita ai dati",
+      "items": {
+        "dashboards": "Dashboard interattive",
+        "visualization": "Visualizzazione dati 3D",
+        "analytics": "Analisi immersiva"
+      }
+    },
+    "stats": {
+      "users": {
+        "value": "10K+",
+        "label": "Utenti Attivi"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Tasso di Soddisfazione"
+      },
+      "insights": {
+        "value": "50M+",
+        "label": "Insights Generati"
+      }
+    },
+    "product": {
+      "title": "Costruito per Scalare",
+      "description": "Dalle startup alle imprese, la nostra piattaforma cresce con il tuo business",
+      "features": {
+        "security": "Sicurezza di livello aziendale",
+        "uptime": "Garanzia di disponibilità del 99,9%",
+        "support": "Supporto clienti 24/7",
+        "integrations": "Integrazioni personalizzate"
+      }
+    },
+    "leadForm": {
+      "title": "Pronto per Iniziare?",
+      "subtitle": "Unisciti a migliaia di aziende che già utilizzano la nostra piattaforma",
+      "form": {
+        "title": "Inizia la Tua Prova Gratuita",
+        "description": "Nessuna carta di credito richiesta. Inizia in pochi minuti.",
+        "fields": {
+          "name": "Nome",
+          "email": "Email",
+          "company": "Azienda",
+          "phone": "Telefono",
+          "message": "Messaggio"
+        },
+        "placeholders": {
+          "name": "Mario Rossi",
+          "email": "mario@azienda.com",
+          "company": "La Tua Azienda",
+          "phone": "+39 (555) 000-0000",
+          "message": "Parlaci delle tue esigenze..."
+        },
+        "submit": "Unisciti alla Lista d'Attesa",
+        "submitting": "Invio in corso...",
+        "success": "Grazie! Ti contatteremo presto.",
+        "error": "Qualcosa è andato storto. Riprova."
+      }
+    },
+    "cta": {
+      "title": "Trasforma il Tuo Business Oggi",
+      "subtitle": "Unisciti alla prossima generazione di aziende data-driven",
+      "button": "Inizia Ora →"
+    }
+  },
+  "nav": {
+    "features": "Funzionalità",
+    "pricing": "Prezzi",
+    "about": "Chi Siamo",
+    "whyus": "Perché Noi?",
+    "login": "Accedi",
+    "lockDiscount": "Blocca Sconto"
+  },
+  "LocaleSwitcher": {
+    "label": "Seleziona Lingua",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ja": "日本語",
+    "ko": "한국어",
+    "th": "ไทย",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}

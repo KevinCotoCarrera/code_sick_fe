@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "hero": {
+      "badge": "🚀 转变您的销售",
+      "title": "通过AI驱动的洞察推动业绩",
+      "description": "利用尖端技术捕获潜在客户，分析反馈，并通过可操作的洞察加速业务增长。",
+      "cta": {
+        "primary": "免费开始",
+        "secondary": "了解更多"
+      }
+    },
+    "features": {
+      "title": "强大的功能",
+      "subtitle": "推动销售和吸引客户所需的一切",
+      "items": {
+        "analytics": {
+          "icon": "🤖",
+          "title": "AI驱动的分析",
+          "description": "通过高级情感分析从客户反馈中获得深刻洞察"
+        },
+        "tracking": {
+          "icon": "📊",
+          "title": "实时追踪",
+          "description": "实时监控您的性能指标和客户参与度"
+        },
+        "integration": {
+          "icon": "⚡",
+          "title": "无缝集成",
+          "description": "使用二维码轻松设置，在所有位置即时部署"
+        }
+      }
+    },
+    "showcase": {
+      "title": "体验未来",
+      "description": "与我们的尖端3D可视化互动，看看我们如何让数据栩栩如生",
+      "items": {
+        "dashboards": "互动仪表板",
+        "visualization": "3D数据可视化",
+        "analytics": "沉浸式分析"
+      }
+    },
+    "stats": {
+      "users": {
+        "value": "10K+",
+        "label": "活跃用户"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "满意度"
+      },
+      "insights": {
+        "value": "50M+",
+        "label": "生成的洞察"
+      }
+    },
+    "product": {
+      "title": "为规模而构建",
+      "description": "从初创公司到企业，我们的平台与您的业务一起成长",
+      "features": {
+        "security": "企业级安全",
+        "uptime": "99.9%正常运行时间保证",
+        "support": "24/7客户支持",
+        "integrations": "定制集成"
+      }
+    },
+    "leadForm": {
+      "title": "准备开始了吗？",
+      "subtitle": "加入已经在使用我们平台的数千家企业",
+      "form": {
+        "title": "开始免费试用",
+        "description": "无需信用卡。几分钟内开始。",
+        "fields": {
+          "name": "姓名",
+          "email": "电子邮件",
+          "company": "公司",
+          "phone": "电话",
+          "message": "留言"
+        },
+        "placeholders": {
+          "name": "张三",
+          "email": "zhang@company.com",
+          "company": "您的公司",
+          "phone": "+86 (555) 000-0000",
+          "message": "告诉我们您的需求..."
+        },
+        "submit": "加入等候名单",
+        "submitting": "提交中...",
+        "success": "谢谢！我们很快会联系您。",
+        "error": "出了点问题。请重试。"
+      }
+    },
+    "cta": {
+      "title": "今天就转变您的业务",
+      "subtitle": "加入下一代数据驱动的企业",
+      "button": "立即开始 →"
+    }
+  },
+  "nav": {
+    "features": "功能",
+    "pricing": "定价",
+    "about": "关于",
+    "whyus": "为什么选择我们？",
+    "login": "登录",
+    "lockDiscount": "锁定折扣"
+  },
+  "LocaleSwitcher": {
+    "label": "选择语言",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ja": "日本語",
+    "ko": "한국어",
+    "th": "ไทย",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}

@@ -1,4 +1,100 @@
 {
+  "landing": {
+    "hero": {
+      "badge": "🚀 Transform Your Sales",
+      "title": "Drive Results with AI-Powered Insights",
+      "description": "Leverage cutting-edge technology to capture leads, analyze feedback, and accelerate your business growth with actionable insights.",
+      "cta": {
+        "primary": "Get Started Free",
+        "secondary": "Learn More"
+      }
+    },
+    "features": {
+      "title": "Powerful Features",
+      "subtitle": "Everything you need to drive sales and engage customers",
+      "items": {
+        "analytics": {
+          "icon": "🤖",
+          "title": "AI-Powered Analytics",
+          "description": "Get deep insights from customer feedback with advanced sentiment analysis"
+        },
+        "tracking": {
+          "icon": "📊",
+          "title": "Real-Time Tracking",
+          "description": "Monitor your performance metrics and customer engagement in real-time"
+        },
+        "integration": {
+          "icon": "⚡",
+          "title": "Seamless Integration",
+          "description": "Easy setup with QR codes and instant deployment across all locations"
+        }
+      }
+    },
+    "showcase": {
+      "title": "Experience the Future",
+      "description": "Interact with our cutting-edge 3D visualizations and see how we bring data to life",
+      "items": {
+        "dashboards": "Interactive dashboards",
+        "visualization": "3D data visualization",
+        "analytics": "Immersive analytics"
+      }
+    },
+    "stats": {
+      "users": {
+        "value": "10K+",
+        "label": "Active Users"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Satisfaction Rate"
+      },
+      "insights": {
+        "value": "50M+",
+        "label": "Insights Generated"
+      }
+    },
+    "product": {
+      "title": "Built for Scale",
+      "description": "From startups to enterprises, our platform grows with your business",
+      "features": {
+        "security": "Enterprise-grade security",
+        "uptime": "99.9% uptime guarantee",
+        "support": "24/7 customer support",
+        "integrations": "Custom integrations"
+      }
+    },
+    "leadForm": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Join thousands of businesses already using our platform",
+      "form": {
+        "title": "Start Your Free Trial",
+        "description": "No credit card required. Get started in minutes.",
+        "fields": {
+          "name": "Name",
+          "email": "Email",
+          "company": "Company",
+          "phone": "Phone",
+          "message": "Message"
+        },
+        "placeholders": {
+          "name": "John Doe",
+          "email": "john@company.com",
+          "company": "Your Company",
+          "phone": "+1 (555) 000-0000",
+          "message": "Tell us about your needs..."
+        },
+        "submit": "Join Waitlist",
+        "submitting": "Submitting...",
+        "success": "Thank you! We'll be in touch soon.",
+        "error": "Something went wrong. Please try again."
+      }
+    },
+    "cta": {
+      "title": "Transform Your Business Today",
+      "subtitle": "Join the next generation of data-driven businesses",
+      "button": "Get Started Now →"
+    }
+  },
   "nav": {
     "features": "Features",
     "pricing": "Pricing",
@@ -10,7 +106,14 @@
   "LocaleSwitcher": {
     "label": "Select Language",
     "en": "English",
-    "th": "ไทย"
+    "es": "Español",
+    "fr": "Français",
+    "ja": "日本語",
+    "ko": "한국어",
+    "th": "ไทย",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文"
   },
 
   "auth": {
@@ -169,7 +272,7 @@
         "title": "Your Plan",
         "frequencies": "Available frequencies:"
       },
-     
+
       "save": "Save Settings",
       "saving": "Saving...",
       "success": "Settings saved successfully!",

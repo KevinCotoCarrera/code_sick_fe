@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "hero": {
+      "badge": "🚀 Transforma Tus Ventas",
+      "title": "Impulsa Resultados con Insights Impulsados por IA",
+      "description": "Aprovecha tecnología de vanguardia para captar leads, analizar comentarios y acelerar el crecimiento de tu negocio con insights accionables.",
+      "cta": {
+        "primary": "Comenzar Gratis",
+        "secondary": "Saber Más"
+      }
+    },
+    "features": {
+      "title": "Funcionalidades Potentes",
+      "subtitle": "Todo lo que necesitas para impulsar ventas y atraer clientes",
+      "items": {
+        "analytics": {
+          "icon": "🤖",
+          "title": "Analítica con IA",
+          "description": "Obtén insights profundos de los comentarios de clientes con análisis de sentimientos avanzado"
+        },
+        "tracking": {
+          "icon": "📊",
+          "title": "Seguimiento en Tiempo Real",
+          "description": "Monitorea tus métricas de rendimiento y participación de clientes en tiempo real"
+        },
+        "integration": {
+          "icon": "⚡",
+          "title": "Integración Sin Problemas",
+          "description": "Configuración fácil con códigos QR y despliegue instantáneo en todas las ubicaciones"
+        }
+      }
+    },
+    "showcase": {
+      "title": "Experimenta el Futuro",
+      "description": "Interactúa con nuestras visualizaciones 3D de vanguardia y descubre cómo damos vida a los datos",
+      "items": {
+        "dashboards": "Paneles interactivos",
+        "visualization": "Visualización de datos en 3D",
+        "analytics": "Analítica inmersiva"
+      }
+    },
+    "stats": {
+      "users": {
+        "value": "10K+",
+        "label": "Usuarios Activos"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Tasa de Satisfacción"
+      },
+      "insights": {
+        "value": "50M+",
+        "label": "Insights Generados"
+      }
+    },
+    "product": {
+      "title": "Construido para Escalar",
+      "description": "Desde startups hasta empresas, nuestra plataforma crece con tu negocio",
+      "features": {
+        "security": "Seguridad de nivel empresarial",
+        "uptime": "Garantía de disponibilidad del 99.9%",
+        "support": "Soporte al cliente 24/7",
+        "integrations": "Integraciones personalizadas"
+      }
+    },
+    "leadForm": {
+      "title": "¿Listo para Comenzar?",
+      "subtitle": "Únete a miles de negocios que ya usan nuestra plataforma",
+      "form": {
+        "title": "Comienza Tu Prueba Gratuita",
+        "description": "No se requiere tarjeta de crédito. Comienza en minutos.",
+        "fields": {
+          "name": "Nombre",
+          "email": "Correo Electrónico",
+          "company": "Empresa",
+          "phone": "Teléfono",
+          "message": "Mensaje"
+        },
+        "placeholders": {
+          "name": "Juan Pérez",
+          "email": "juan@empresa.com",
+          "company": "Tu Empresa",
+          "phone": "+34 (555) 000-0000",
+          "message": "Cuéntanos sobre tus necesidades..."
+        },
+        "submit": "Unirse a Lista de Espera",
+        "submitting": "Enviando...",
+        "success": "¡Gracias! Nos pondremos en contacto pronto.",
+        "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+      }
+    },
+    "cta": {
+      "title": "Transforma Tu Negocio Hoy",
+      "subtitle": "Únete a la próxima generación de negocios basados en datos",
+      "button": "Comenzar Ahora →"
+    }
+  },
+  "nav": {
+    "features": "Funcionalidades",
+    "pricing": "Precios",
+    "about": "Acerca de",
+    "whyus": "¿Por Qué Nosotros?",
+    "login": "Iniciar Sesión",
+    "lockDiscount": "Bloquear Descuento"
+  },
+  "LocaleSwitcher": {
+    "label": "Seleccionar Idioma",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ja": "日本語",
+    "ko": "한국어",
+    "th": "ไทย",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}

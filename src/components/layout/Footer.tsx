@@ -1,30 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const t = useTranslations("home.footer");
   return (
     <footer className="mt-16 border-t border-gray-200 bg-white/80 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 sm:px-8 py-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600">
         <div className="flex items-center gap-2 text-gray-700 font-semibold">
-          <span>KraowKao</span>
+          <span>CodeSick</span>
           <span className="text-gray-400">•</span>
-          <span>
-            {t("tagline", { default: "AI-powered feedback for restaurants" })}
-          </span>
+          <span>AI-powered business solutions</span>
         </div>
         <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
-          <a className="hover:text-amber-600" href="tel:+66636455571">
-            {t("phoneLabel", { default: "Phone" })}: +66 63 645 5571
+          <a className="hover:text-blue-600" href="tel:+66636455571">
+            Phone: +66 63 645 5571
           </a>
           <span className="hidden sm:inline text-gray-300">|</span>
           <a
-            className="hover:text-amber-600"
-            href="mailto:founder@kraowkao.com"
+            className="hover:text-blue-600"
+            href="mailto:contact@codesick.com"
           >
-            {t("emailLabel", { default: "Email" })}: founder@kraowkao.com
+            Email: contact@codesick.com
           </a>
         </div>
       </div>

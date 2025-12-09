@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "hero": {
+      "badge": "🚀 Transforme Suas Vendas",
+      "title": "Impulsione Resultados com Insights Alimentados por IA",
+      "description": "Aproveite tecnologia de ponta para capturar leads, analisar feedback e acelerar o crescimento do seu negócio com insights acionáveis.",
+      "cta": {
+        "primary": "Começar Gratuitamente",
+        "secondary": "Saiba Mais"
+      }
+    },
+    "features": {
+      "title": "Funcionalidades Poderosas",
+      "subtitle": "Tudo o que você precisa para impulsionar vendas e engajar clientes",
+      "items": {
+        "analytics": {
+          "icon": "🤖",
+          "title": "Análise com IA",
+          "description": "Obtenha insights profundos do feedback dos clientes com análise de sentimentos avançada"
+        },
+        "tracking": {
+          "icon": "📊",
+          "title": "Rastreamento em Tempo Real",
+          "description": "Monitore suas métricas de desempenho e engajamento de clientes em tempo real"
+        },
+        "integration": {
+          "icon": "⚡",
+          "title": "Integração Perfeita",
+          "description": "Configuração fácil com códigos QR e implantação instantânea em todos os locais"
+        }
+      }
+    },
+    "showcase": {
+      "title": "Experimente o Futuro",
+      "description": "Interaja com nossas visualizações 3D de ponta e veja como damos vida aos dados",
+      "items": {
+        "dashboards": "Painéis interativos",
+        "visualization": "Visualização de dados 3D",
+        "analytics": "Análise imersiva"
+      }
+    },
+    "stats": {
+      "users": {
+        "value": "10K+",
+        "label": "Usuários Ativos"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Taxa de Satisfação"
+      },
+      "insights": {
+        "value": "50M+",
+        "label": "Insights Gerados"
+      }
+    },
+    "product": {
+      "title": "Construído para Escalar",
+      "description": "De startups a empresas, nossa plataforma cresce com seu negócio",
+      "features": {
+        "security": "Segurança de nível empresarial",
+        "uptime": "Garantia de disponibilidade de 99,9%",
+        "support": "Suporte ao cliente 24/7",
+        "integrations": "Integrações personalizadas"
+      }
+    },
+    "leadForm": {
+      "title": "Pronto para Começar?",
+      "subtitle": "Junte-se a milhares de empresas que já usam nossa plataforma",
+      "form": {
+        "title": "Comece Seu Teste Gratuito",
+        "description": "Não é necessário cartão de crédito. Comece em minutos.",
+        "fields": {
+          "name": "Nome",
+          "email": "E-mail",
+          "company": "Empresa",
+          "phone": "Telefone",
+          "message": "Mensagem"
+        },
+        "placeholders": {
+          "name": "João Silva",
+          "email": "joao@empresa.com",
+          "company": "Sua Empresa",
+          "phone": "+55 (555) 000-0000",
+          "message": "Conte-nos sobre suas necessidades..."
+        },
+        "submit": "Entrar na Lista de Espera",
+        "submitting": "Enviando...",
+        "success": "Obrigado! Entraremos em contato em breve.",
+        "error": "Algo deu errado. Por favor, tente novamente."
+      }
+    },
+    "cta": {
+      "title": "Transforme Seu Negócio Hoje",
+      "subtitle": "Junte-se à próxima geração de negócios orientados por dados",
+      "button": "Começar Agora →"
+    }
+  },
+  "nav": {
+    "features": "Funcionalidades",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "whyus": "Por Que Nós?",
+    "login": "Entrar",
+    "lockDiscount": "Bloquear Desconto"
+  },
+  "LocaleSwitcher": {
+    "label": "Selecionar Idioma",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ja": "日本語",
+    "ko": "한국어",
+    "th": "ไทย",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}

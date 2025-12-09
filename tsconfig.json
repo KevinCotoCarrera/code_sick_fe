@@ -36,7 +36,8 @@
       // "@i18n/*": ["./src/lib/services/i18n/*"],
       "@i18n/*": ["./src/i18n/*"],
       "@messages/*": ["./src/messages/*"],
-      "@services/*": ["./src/lib/services/*"]
+      "@services/*": ["./src/lib/services/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": [

@@ -14,12 +14,14 @@ type Props = {
 // Flag emojis for languages
 const FLAGS: Record<string, string> = {
   en: "🇺🇸",
-  th: "🇹🇭",
   es: "🇪🇸",
-  ch: "🇨🇳",
-  jp: "🇯🇵",
+  fr: "🇫🇷",
+  ja: "🇯🇵",
+  ko: "🇰🇷",
+  th: "🇹🇭",
+  pt: "🇵🇹",
   it: "🇮🇹",
-  de: "🇩🇪",
+  zh: "🇨🇳",
 };
 
 export default function LocaleSwitcherSelect({

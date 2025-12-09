@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "hero": {
+      "badge": "🚀 Transformez Vos Ventes",
+      "title": "Obtenez des Résultats avec des Insights Alimentés par l'IA",
+      "description": "Exploitez une technologie de pointe pour capturer des leads, analyser les retours et accélérer la croissance de votre entreprise avec des insights actionnables.",
+      "cta": {
+        "primary": "Commencer Gratuitement",
+        "secondary": "En Savoir Plus"
+      }
+    },
+    "features": {
+      "title": "Fonctionnalités Puissantes",
+      "subtitle": "Tout ce dont vous avez besoin pour stimuler les ventes et engager les clients",
+      "items": {
+        "analytics": {
+          "icon": "🤖",
+          "title": "Analytique Alimentée par l'IA",
+          "description": "Obtenez des insights approfondis des retours clients avec une analyse de sentiment avancée"
+        },
+        "tracking": {
+          "icon": "📊",
+          "title": "Suivi en Temps Réel",
+          "description": "Surveillez vos métriques de performance et l'engagement client en temps réel"
+        },
+        "integration": {
+          "icon": "⚡",
+          "title": "Intégration Transparente",
+          "description": "Configuration facile avec des codes QR et déploiement instantané dans tous les emplacements"
+        }
+      }
+    },
+    "showcase": {
+      "title": "Découvrez le Futur",
+      "description": "Interagissez avec nos visualisations 3D de pointe et découvrez comment nous donnons vie aux données",
+      "items": {
+        "dashboards": "Tableaux de bord interactifs",
+        "visualization": "Visualisation de données 3D",
+        "analytics": "Analytique immersive"
+      }
+    },
+    "stats": {
+      "users": {
+        "value": "10K+",
+        "label": "Utilisateurs Actifs"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Taux de Satisfaction"
+      },
+      "insights": {
+        "value": "50M+",
+        "label": "Insights Générés"
+      }
+    },
+    "product": {
+      "title": "Conçu pour l'Échelle",
+      "description": "Des startups aux entreprises, notre plateforme grandit avec votre entreprise",
+      "features": {
+        "security": "Sécurité de niveau entreprise",
+        "uptime": "Garantie de disponibilité de 99,9%",
+        "support": "Support client 24/7",
+        "integrations": "Intégrations personnalisées"
+      }
+    },
+    "leadForm": {
+      "title": "Prêt à Commencer?",
+      "subtitle": "Rejoignez des milliers d'entreprises utilisant déjà notre plateforme",
+      "form": {
+        "title": "Commencez Votre Essai Gratuit",
+        "description": "Aucune carte de crédit requise. Commencez en quelques minutes.",
+        "fields": {
+          "name": "Nom",
+          "email": "Email",
+          "company": "Entreprise",
+          "phone": "Téléphone",
+          "message": "Message"
+        },
+        "placeholders": {
+          "name": "Jean Dupont",
+          "email": "jean@entreprise.com",
+          "company": "Votre Entreprise",
+          "phone": "+33 (555) 000-0000",
+          "message": "Parlez-nous de vos besoins..."
+        },
+        "submit": "Rejoindre la Liste d'Attente",
+        "submitting": "Envoi en cours...",
+        "success": "Merci! Nous vous contactons bientôt.",
+        "error": "Une erreur s'est produite. Veuillez réessayer."
+      }
+    },
+    "cta": {
+      "title": "Transformez Votre Entreprise Aujourd'hui",
+      "subtitle": "Rejoignez la prochaine génération d'entreprises axées sur les données",
+      "button": "Commencer Maintenant →"
+    }
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "about": "À Propos",
+    "whyus": "Pourquoi Nous?",
+    "login": "Se Connecter",
+    "lockDiscount": "Verrouiller la Remise"
+  },
+  "LocaleSwitcher": {
+    "label": "Sélectionner la Langue",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ja": "日本語",
+    "ko": "한국어",
+    "th": "ไทย",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}
