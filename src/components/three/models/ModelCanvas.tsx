@@ -320,11 +320,33 @@ function CityBuilding({
 function CityPlazaScene() {
   return (
     <group position={[0, -0.1, 0]}>
-      <CityBuilding asset="building-skyscraper-a" position={[-1.2, 0, -1.0]} scale={12} />
-      <CityBuilding asset="building-skyscraper-b" position={[1.1, 0, -1.1]} scale={11.5} />
-      <CityBuilding asset="building-skyscraper-d" position={[0.15, 0, -1.4]} scale={11} />
-      <CityBuilding asset="building-e" position={[-1.0, 0, 0.35]} scale={8} rotation={[0, Math.PI / 14, 0]} />
-      <CityBuilding asset="building-g" position={[1.0, 0, 0.35]} scale={8} rotation={[0, -Math.PI / 16, 0]} />
+      <CityBuilding
+        asset="building-skyscraper-a"
+        position={[-1.2, 0, -1.0]}
+        scale={12}
+      />
+      <CityBuilding
+        asset="building-skyscraper-b"
+        position={[1.1, 0, -1.1]}
+        scale={11.5}
+      />
+      <CityBuilding
+        asset="building-skyscraper-d"
+        position={[0.15, 0, -1.4]}
+        scale={11}
+      />
+      <CityBuilding
+        asset="building-e"
+        position={[-1.0, 0, 0.35]}
+        scale={8}
+        rotation={[0, Math.PI / 14, 0]}
+      />
+      <CityBuilding
+        asset="building-g"
+        position={[1.0, 0, 0.35]}
+        scale={8}
+        rotation={[0, -Math.PI / 16, 0]}
+      />
       <CityBuilding asset="building-l" position={[0.2, 0, 0.9]} scale={7} />
       <CityBuilding asset="building-b" position={[-1.15, 0, 1.0]} scale={6.5} />
       <CityBuilding asset="building-c" position={[1.15, 0, 0.95]} scale={6.3} />
@@ -338,7 +360,11 @@ function CityPlazaScene() {
       </mesh>
       <mesh position={[0, 0.03, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <circleGeometry args={[0.85, 48]} />
-        <meshStandardMaterial color="#111827" roughness={0.75} metalness={0.15} />
+        <meshStandardMaterial
+          color="#111827"
+          roughness={0.75}
+          metalness={0.15}
+        />
       </mesh>
     </group>
   );
@@ -369,8 +395,7 @@ function AbstractOrbScene() {
         />
       </mesh>
 
-      <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, -0.02, 0]}
-        scale={1.4}>
+      <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} scale={1.4}>
         <ringGeometry args={[0.95, 1.05, 64]} />
         <meshStandardMaterial
           color="#22d3ee"
@@ -381,8 +406,7 @@ function AbstractOrbScene() {
         />
       </mesh>
 
-      <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}
-        scale={1.8}>
+      <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} scale={1.8}>
         <ringGeometry args={[1.1, 1.5, 72]} />
         <meshStandardMaterial
           color="#a855f7"
@@ -395,11 +419,7 @@ function AbstractOrbScene() {
 
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, -0.15, 0]}>
         <circleGeometry args={[1.35, 64]} />
-        <meshStandardMaterial
-          color="#0f172a"
-          roughness={0.9}
-          metalness={0.1}
-        />
+        <meshStandardMaterial color="#0f172a" roughness={0.9} metalness={0.1} />
       </mesh>
     </group>
   );
